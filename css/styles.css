@@ -1,0 +1,49 @@
+body {
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    background-color: lightgoldenrodyellow;
+}
+h1 {
+    text-align: center;
+
+}
+
+footer {
+    margin-top: 200px;
+}
+
+.form-group.required .control-label:after{
+    color: red;
+    content: '*Required';
+}
+
+#questions {
+    float:left;
+    width:50%;
+    text-align:right;
+    margin-right:5px; /* optional */
+}
+
+input {
+    float:left;
+    width: 50%;
+    text-align:left;
+}
+
+#submit {
+    width:20%;
+    text-align: center;
+    line-height: 30px;
+
+}
+.result {
+    width: 80%;
+    background-color: aquamarine;
+}
+.result p {
+    font-size: 24px;
+
+}
