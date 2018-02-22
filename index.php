@@ -23,7 +23,7 @@ require 'includes/index-logic.php';
                 <div class='panel-body form-horizontal payment-form'>
                     <div class='form-group required'>
                         <label for='noOfPeople' class='col-sm-6 control-label'>Split how many ways?</label>
-                        <div class='col-sm-6'>
+                        <div class='col-sm-3'>
                             <input type='number'
                                    class='form-control' name='noOfPeople'
                                    required
@@ -31,7 +31,7 @@ require 'includes/index-logic.php';
                                    value='<?php if ($noOfPeople) echo $noOfPeople ?>'/>
                         </div>
                         <label for='amount' class='col-sm-6 control-label'>How much was the tab?</label>
-                        <div class='col-sm-6'>
+                        <div class='col-sm-3'>
                             <input type='number'
                                    class='form-control' name='amount'
                                    required
@@ -41,7 +41,7 @@ require 'includes/index-logic.php';
                         </div>
                     </div>
                     <label for='service' class='col-sm-6 control-label'>How was the service?</label>
-                    <div class='col-sm-6'>
+                    <div class='col-sm-3'>
                         <select class='form-control' name='service'>
                             <option value='0' <?php if ($service == '0') echo 'selected' ?>>No Tip Required</option>
                             <option value='10' <?php if ($service == '10') echo 'selected' ?>>Bad 10%</option>
@@ -49,30 +49,37 @@ require 'includes/index-logic.php';
                             <option value='18' <?php if ($service == '18') echo 'selected' ?>>Good 18%</option>
                             <option value='20' <?php if ($service == '20') echo 'selected' ?>>Great 20%</option>
                             <option value='25' <?php if ($service == '25') echo 'selected' ?>>Super 25%</option>
-                        </select><br/>
+                        </select>
                     </div>
                     <label for='roundUp' class='col-sm-6 control-label'>Round up?</label>
-                    <div class='col-sm-6'>
+                    <div class='col-sm-1'>
                         <input type='checkbox'
                                class='form-control'
-                               name='roundUp' <?php if ($roundUp) echo 'checked' ?>/>
+                               name='roundUp' <?php if ($roundUp) echo 'checked' ?>/><br/><br/>
                     </div>
-                    <div class='col-sm-12 text-right'>
-                        <input type='submit' value='Calculate' class='btn btn-primary btn-sm'/>
+                    <div class='col-sm-12'>
+                        <p class='warning'>* required fields</p>
+                    </div>
+                    <div class='col-sm-12'>
+                        <input type='submit' value='Calculate' class='btn btn-primary submitButton'/><br/><br/>
+<!--                        <input type='submit' value='Calculate' class='btn btn-primary pull-right'/><br/><br/> -->
+                    </div>
+                    <div class='col-sm-12 result'>
+                        <?php if (isset($results)) : ?>
+                            <?php if ($noOfPeople > 1) : ?>
+                                <p>Everyone owes $<?= $results ?> each.</p>
+                            <?php else : ?>
+                                <p>You owe $<?= $results ?>.</p>
+                            <?php endif ?>
+                        <?php else : ?>
+                            <p>Please enter the total amount and how many ways to split!</p>
+                        <?php endif ?>
+                    </div>
+                    <div class='col-sm-12'>
+                        <input type='reset' value='Reset' class='btn btn-primary submitButton'/>
                     </div>
                 </div>
             </form>
-            <div class='result'>
-                <?php if (isset($results)) : ?>
-                    <?php if ($noOfPeople > 1) : ?>
-                        <p>Everyone owes $<?= $results ?></p>
-                    <?php else : ?>
-                        <p>You owe $<?= $results ?></p>
-                    <?php endif ?>
-                <?php else : ?>
-                <p>Please enter the total amount and how many ways to split!
-                    <?php endif ?>
-            </div>
         </div>
     </div>
 </div>

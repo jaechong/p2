@@ -6,9 +6,9 @@ body {
 .container {
     background-color: lightgoldenrodyellow;
 }
+
 h1 {
     text-align: center;
-
 }
 
 footer {
@@ -17,33 +17,50 @@ footer {
 
 .form-group.required .control-label:after{
     color: red;
-    content: '*Required';
+    content: '*';
+}
+
+.panel {
+    display: block;
+    margin: 5%;
+    padding: 5%;
+}
+
+.warning {
+    color: red;
+}
+
+.submitButton {
+    margin: 2% 0%;
+    padding: 2%;
+    width: 100%;
+    text-align: center;
 }
 
 #questions {
-    float:left;
-    width:50%;
-    text-align:right;
-    margin-right:5px; /* optional */
+    float: left;
+    width: 20%;
+    text-align: right;
+    margin-right: 10px; /* optional */
+    padding: 2%;
 }
 
 input {
-    float:left;
-    width: 50%;
-    text-align:left;
+    float: left;
+    width: 20%;
+    text-align: left;
+    margin: 4%;
 }
 
-#submit {
-    width:20%;
-    text-align: center;
-    line-height: 30px;
-
-}
 .result {
-    width: 80%;
+    margin: 2% 0%;
+    padding: 2%;
     background-color: aquamarine;
+    border-style: ridge;
+    border-width: 4px;
+    border-color: aquamarine;
 }
-.result p {
-    font-size: 24px;
 
+.result p {
+    font-size: 20px;
 }
