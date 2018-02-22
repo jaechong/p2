@@ -55,14 +55,14 @@ require 'includes/index-logic.php';
                     <div class='col-sm-1'>
                         <input type='checkbox'
                                class='form-control'
-                               name='roundUp' <?php if ($roundUp) echo 'checked' ?>/><br/><br/>
+                               name='roundUp' <?php if ($roundUp) echo 'checked' ?>/><br/>
                     </div>
                     <div class='col-sm-12'>
                         <p class='warning'>* required fields</p>
                     </div>
-                    <div class='col-sm-12'>
-                        <input type='submit' value='Calculate' class='btn btn-primary submitButton'/><br/><br/>
-<!--                        <input type='submit' value='Calculate' class='btn btn-primary pull-right'/><br/><br/> -->
+                    <div class='col-sm-4'></div> <!-- dirty way to center the button until I figure it out better way -->
+                    <div class='col-sm-4'>
+                    <input type='submit' value='Calculate' class='btn btn-primary brn-lg submitButton'/><br/>
                     </div>
                     <div class='col-sm-12 result'>
                         <?php if (isset($results)) : ?>
@@ -74,9 +74,6 @@ require 'includes/index-logic.php';
                         <?php else : ?>
                             <p>Please enter the total amount and how many ways to split!</p>
                         <?php endif ?>
-                    </div>
-                    <div class='col-sm-12'>
-                        <input type='reset' value='Reset' class='btn btn-primary submitButton'/>
                     </div>
                 </div>
             </form>

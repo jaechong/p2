@@ -15,7 +15,8 @@ if (!empty($_GET)) {
 
     # Instantiate a new Cipher object
     $bill = new Bill();
-    # Use the object to encode the message
+
+    # Use the object to calculate the amount
     $results = $bill->splitBill($noOfPeople, $amount, $service, $roundUp);
 }
 
