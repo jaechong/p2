@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 require 'includes/helpers.php';
 require 'includes/index-logic.php';
@@ -5,7 +6,7 @@ require 'includes/index-logic.php';
 <html lang='en'>
 <head>
     <title>Bill Splitter</title>
-    <meta charset='utf-8'>
+    <meta charset="utf-8"/>
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -22,7 +23,7 @@ require 'includes/index-logic.php';
             <form method='GET'>
                 <div class='panel-body form-horizontal payment-form'>
                     <div class='form-group required'>
-                        <label for='noOfPeople' class='col-sm-6 control-label'>Split how many ways?</label>
+                        <label class='col-sm-6 control-label'>Split how many ways?</label>
                         <div class='col-sm-3'>
                             <input type='number'
                                    class='form-control' name='noOfPeople'
@@ -30,7 +31,7 @@ require 'includes/index-logic.php';
                                    min='1'
                                    value='<?php if ($noOfPeople) echo $noOfPeople ?>'/>
                         </div>
-                        <label for='amount' class='col-sm-6 control-label'>How much was the tab?</label>
+                        <label class='col-sm-6 control-label'>How much was the tab?</label>
                         <div class='col-sm-3'>
                             <input type='number'
                                    class='form-control' name='amount'
@@ -40,7 +41,7 @@ require 'includes/index-logic.php';
                                    value='<?php if ($amount) echo $amount ?>'/>
                         </div>
                     </div>
-                    <label for='service' class='col-sm-6 control-label'>How was the service?</label>
+                    <label class='col-sm-6 control-label'>How was the service?</label>
                     <div class='col-sm-3'>
                         <select class='form-control' name='service'>
                             <option value='0' <?php if ($service == '0') echo 'selected' ?>>No Tip Required</option>
@@ -51,7 +52,7 @@ require 'includes/index-logic.php';
                             <option value='25' <?php if ($service == '25') echo 'selected' ?>>Super 25%</option>
                         </select>
                     </div>
-                    <label for='roundUp' class='col-sm-6 control-label'>Round up?</label>
+                    <label class='col-sm-6 control-label'>Round up?</label>
                     <div class='col-sm-1'>
                         <input type='checkbox'
                                class='form-control'
